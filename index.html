@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 Months of Forevership | For You</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --red: #ff345b;
+  --pink: #ff9eb5;
+  --bg: #100307;
+  --card: #210811;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: #fff0f3;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 15%, #64112755, transparent 45%),
+    radial-gradient(ellipse at 85% 85%, #a20e3033, transparent 45%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #ff809b;
+  box-shadow: 0 0 12px #ff345b;
+  animation: float 7s infinite ease-in-out;
+  opacity: .5;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0) scale(.7); opacity: .2; }
+  50% { transform: translateY(-80px) scale(1.5); opacity: .9; }
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 24px 12px 10px;
+  color: var(--pink);
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.page {
+  display: none;
+  position: relative;
+  z-index: 1;
+  min-height: 84vh;
+  padding: 30px 20px 45px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  animation: appear .8s ease;
+}
+
+.page.active { display: flex; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  color: var(--pink);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1.08;
+}
+
+h2 {
+  font-size: clamp(35px, 7vw, 58px);
+  line-height: 1.15;
+}
+
+.accent {
+  color: var(--red);
+  font-style: italic;
+  text-shadow: 0 0 35px #ff345b44;
+}
+
+.description {
+  max-width: 650px;
+  margin: 24px auto 0;
+  font-size: 14px;
+  line-height: 2.1;
+  color: #e8cbd2;
+  font-weight: 300;
+}
+
+.quote-card {
+  width: min(100%, 650px);
+  margin-top: 32px;
+  padding: 30px 25px;
+  border: 1px solid #ff345b44;
+  background: linear-gradient(135deg, #310b18cc, #16060ccc);
+  border-radius: 18px;
+  box-shadow: 0 15px 65px #0005, inset 0 0 35px #ff345b08;
+}
+
+.quote-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 4.5vw, 30px);
+  line-height: 1.8;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+button {
+  border: 1px solid #ff6684;
+  border-radius: 50px;
+  padding: 14px 26px;
+  background: linear-gradient(120deg, #e51d48, #9e1237);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 0 22px #ff174433;
+  transition: .3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px #ff174477;
+}
+
+button.secondary {
+  background: transparent;
+  border-color: #7d3648;
+  box-shadow: none;
+  color: #ffd2dc;
+}
+
+.counter {
+  margin-top: 28px;
+  color: #b88a96;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+/* PAGE 2 */
+
+.celebration {
+  font-size: 12px;
+  color: #ff9db2;
+  letter-spacing: 5px;
+  margin-bottom: 24px;
+}
+
+.months {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(75px, 17vw, 145px);
+  color: #ff3159;
+  line-height: 1;
+  text-shadow: 0 0 55px #ff214b66;
+}
+
+.message-box {
+  max-width: 620px;
+  margin-top: 30px;
+  padding: 26px;
+  border-radius: 16px;
+  background: #230913b8;
+  border: 1px solid #b52c4b55;
+}
+
+.message-box p {
+  color: #efd6dc;
+  font-size: 13px;
+  line-height: 2.1;
+  font-weight: 300;
+}
+
+.signature {
+  color: #ff9eb5;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* PAGE 3 — CSS SUNFLOWER */
+
+#page3 {
+  background:
+    radial-gradient(ellipse at center, #33200b 0%, #171008 48%, #100b08 100%);
+  color: #fff4d7;
+  overflow: hidden;
+}
+
+#page3 .eyebrow { color: #e7c77d; }
+#page3 .description { color: #e3d3b0; }
+
+.flower-scene {
+  width: 300px;
+  height: 385px;
+  max-width: 90vw;
+  position: relative;
+  margin: 8px auto 0;
+}
+
+.flower {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 10px 18px #0008);
+  animation: sway 5s ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+
+@keyframes sway {
+  0%,100% { rotate: -3deg; }
+  50% { rotate: 3deg; }
+}
+
+.petal {
+  position: absolute;
+  width: 38px;
+  height: 105px;
+  left: 116px;
+  top: 9px;
+  transform-origin: 19px 126px;
+  border-radius: 80% 80% 48% 48%;
+  background:
+    linear-gradient(90deg, #a95b0b 0%, #f6b52f 24%,
+    #ffe88b 48%, #eaa01b 75%, #8c4409 100%);
+  box-shadow: inset 0 0 8px #fff2a233, 0 0 4px #d8871766;
+}
+
+.petal::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 70%;
+  left: 50%;
+  top: 10%;
+  background: #fff0a333;
+}
+
+.flower-center {
+  position: absolute;
+  width: 108px;
+  height: 108px;
+  left: 81px;
+  top: 80px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, #916034 0%, transparent 24%),
+    radial-gradient(circle, #24150d 0%, #4a2916 43%, #1a100a 68%, #6d411e 74%, #2c190c 82%);
+  box-shadow: inset 0 0 14px #000, 0 0 0 5px #bd7b20;
+  z-index: 2;
+}
+
+.seed {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #b7894b;
+  box-shadow: 0 0 2px #efc77c;
+}
+
+.flower-stem {
+  position: absolute;
+  width: 13px;
+  height: 175px;
+  left: 144px;
+  top: 220px;
+  background: linear-gradient(90deg, #264b20, #6c963c, #355725);
+  border-radius: 0 0 10px 10px;
+  transform: rotate(-3deg);
+  z-index: -1;
+}
+
+.leaf {
+  position: absolute;
+  width: 82px;
+  height: 37px;
+  background: linear-gradient(160deg, #73983b, #29451c 75%);
+  border-radius: 100% 0 100% 0;
+  top: 280px;
+  left: 145px;
+  transform: rotate(-20deg);
+  box-shadow: inset 0 0 8px #c4db6344;
+}
+
+.leaf::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 1px;
+  background: #c5d58b88;
+  left: 4px;
+  top: 19px;
+  transform: rotate(-9deg);
+}
+
+.leaf.left {
+  left: 75px;
+  top: 310px;
+  transform: scaleX(-1) rotate(-25deg);
+}
+
+.ground {
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+  width: 240px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #b58b3444, transparent 70%);
+}
+
+.sunflower-note {
+  max-width: 520px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-style: italic;
+  line-height: 1.7;
+  color: #f5dfab;
+  margin-top: 12px;
+}
+
+/* PAGE 4 */
+
+.final-card {
+  max-width: 670px;
+  padding: 35px 25px;
+  border: 1px solid #ff456344;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #300b18bb, #15060cdd);
+  box-shadow: 0 15px 60px #0006;
+  margin-top: 30px;
+}
+
+.final-card p {
+  color: #efd4dc;
+  font-size: 13px;
+  line-height: 2.1;
+  font-weight: 300;
+  margin-bottom: 14px;
+}
+
+.endline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  font-style: italic;
+  color: #ff8ca7;
+  margin-top: 24px;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 18px 10px 28px;
+  font-size: 10px;
+  color: #8f6570;
+  letter-spacing: 2px;
+}
+
+@media(max-width: 480px) {
+  .page { padding: 28px 17px 40px; }
+  .quote-card { padding: 23px 17px; }
+  .flower-scene { transform: scale(.9); margin-top: -8px; margin-bottom: -10px; }
+}
+</style>
+</head>
+
+<body>
+<div id="particles"></div>
+
+<header>Made with love, just for you</header>
+
+<!-- PAGE 1 -->
+<section class="page active" id="page1">
+  <div class="eyebrow">A little something from my heart</div>
+
+  <h1>Kuch lafz<br> <span class="accent">sirf tumhare liye.</span></h1>
+
+  <div class="quote-card">
+    <p>
+      "Mohabbat sirf paane ka naam nahi,<br>
+      kisi ki khushi mein apni khushi dhoondhne ka naam hai.<br>
+      Tum paas ho ya door, farq bas itna sa hai,<br>
+      mera dil aaj bhi tumhare naam se hi muskurata hai."
+    </p>
+  </div>
+
+  <p class="description">
+    Zindagi mein bahut se log milte hain, lekin kuch log
+    sirf milte nahi, hamari duniya ko khoobsurat bana dete hain.
+    Tum mere liye unhi mein se ek ho. Tumhari ek chhoti si smile
+    mere bure din ko bhi achha bana sakti hai. Tum important ho,
+    sirf isliye nahi ki tum meri life mein ho, balki isliye ki
+    tumhare hone se meri life aur bhi special lagti hai.
+  </p>
+
+  <div class="buttons">
+    <button onclick="nextPage(2)">Aage badho, meri jaan &rarr;</button>
+  </div>
+  <div class="counter">01 / 04 — THE BEGINNING</div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+  <div class="celebration">TODAY IS ABOUT US</div>
+
+  <h1>Happy 7 Months of</h1>
+  <div class="months">Us.</div>
+  <h2 class="accent">Our Forevership</h2>
+
+  <div class="message-box">
+    <p>
+      Happy 7 months, meri favourite person.
+      <br><br>
+      Pata hi nahi chala kab tum meri daily life ka itna
+      beautiful part ban gayi. Tumse baat karna, tumhari
+      care karna, tumhe hasana aur tumhari chhoti-chhoti
+      baaton ko yaad rakhna — ye sab mere liye bahut special hai.
+      <br><br>
+      Main promise nahi karunga ki har din perfect hoga,
+      lekin itna zaroor chahta hoon ki imperfect days mein bhi
+      hum ek doosre ko samjhein, ek doosre ki respect karein
+      aur milkar har problem face karein.
+      <br><br>
+      Mujhe sirf aaj ka special moment nahi chahiye.
+      Mujhe tumhare saath woh normal se din bhi chahiye
+      jahan hum bina kisi reason ke hans rahe hon.
+      Main chahta hoon ki hum grow karein, ek doosre ke dreams
+      support karein aur har naye month ke saath apni story
+      ko aur beautiful banayein.
+      <br><br>
+      <strong style="color:#ff9eb5">
+        Seven months down, so many beautiful memories ahead.
+        You are special to me, more than these words can explain.
+      </strong>
+    </p>
+    <div class="signature">Forever yours, with all my heart.</div>
+  </div>
+
+  <div class="buttons">
+    <button class="secondary" onclick="nextPage(1)">&larr; Previous</button>
+    <button onclick="nextPage(3)">Ek surprise hai tumhare liye &rarr;</button>
+  </div>
+  <div class="counter">02 / 04 — OUR LITTLE FOREVER</div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" id="page3">
+  <div class="eyebrow">A flower, made just for you</div>
+
+  <h2 style="color:#f5d88d">My Little Sunflower</h2>
+
+  <div class="flower-scene">
+    <div class="flower" id="flower">
+      <div class="flower-center" id="flowerCenter"></div>
+    </div>
+    <div class="flower-stem"></div>
+    <div class="leaf"></div>
+    <div class="leaf left"></div>
+    <div class="ground"></div>
+  </div>
+
+  <div class="sunflower-note">
+    "Just like a sunflower turns towards the sunlight,
+    may we always find our way back to warmth,
+    kindness and each other."
+  </div>
+
+  <p class="description">
+    Ye sunflower tumhare liye — because you deserve
+    little things that make you smile. May your days
+    always have reasons to bloom, even after the hardest rain.
+  </p>
+
+  <div class="buttons">
+    <button class="secondary" onclick="nextPage(2)">&larr; Previous</button>
+    <button onclick="nextPage(4)">One last thing, please read &rarr;</button>
+  </div>
+  <div class="counter">03 / 04 — A LITTLE SUNSHINE</div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page" id="page4">
+  <div class="eyebrow">Before this little story ends</div>
+
+  <h1>Thank you for<br><span class="accent">coming into my life.</span></h1>
+
+  <div class="final-card">
+    <p>
+      Thank you so much for being a part of my life.
+      Thank you for every conversation, every laugh,
+      every little moment and every memory we have made.
+    </p>
+
+    <p>
+      Thank you for giving me someone to look forward to,
+      someone whose happiness matters to me, and someone
+      who makes ordinary days feel a little more beautiful.
+    </p>
+
+    <p>
+      I know we are both learning, growing and figuring life out.
+      We might not always understand everything perfectly,
+      but I hope we always make space for honesty, patience,
+      respect and the kind of love that feels safe.
+    </p>
+
+    <p>
+      I hope you never forget how valuable you are.
+      You deserve happiness, success, peace and every beautiful
+      thing you dream of. I will always want to see you grow
+      into the person you wish to become.
+    </p>
+
+    <p>
+      And if I could ask for one thing, it would be this:
+      let's keep creating memories, celebrating little victories
+      and choosing kindness, even on difficult days.
+    </p>
+
+    <div class="endline">
+      "You are a beautiful part of my story."
+    </div>
+
+    <p style="margin-top:25px; color:#ff9eb5;">
+      Happy 7 Months of Forevership.<br>
+      Today, tomorrow and every beautiful chapter ahead.
+    </p>
+  </div>
+
+  <div class="buttons">
+    <button class="secondary" onclick="nextPage(3)">&larr; Back to your sunflower</button>
+    <button onclick="restart()">Read our story again</button>
+  </div>
+
+  <div class="counter">04 / 04 — TO BE CONTINUED...</div>
+</section>
+
+<footer>ONE LITTLE WEBSITE · A THOUSAND LITTLE FEELINGS</footer>
+
+<script>
+function nextPage(number) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  document.getElementById('page' + number).classList.add('active');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function restart() {
+  nextPage(1);
+}
+
+// Soft floating lights
+const particleBox = document.getElementById('particles');
+
+for (let i = 0; i < 32; i++) {
+  const spark = document.createElement('span');
+  spark.className = 'spark';
+  spark.style.left = Math.random() * 100 + '%';
+  spark.style.top = Math.random() * 100 + '%';
+  spark.style.animationDelay = Math.random() * 7 + 's';
+  spark.style.animationDuration = (5 + Math.random() * 7) + 's';
+  particleBox.appendChild(spark);
+}
+
+// Build the sunflower using CSS petals
+const flower = document.getElementById('flower');
+const petalCount = 24;
+
+for (let i = 0; i < petalCount; i++) {
+  const petal = document.createElement('div');
+  petal.className = 'petal';
+  petal.style.transform = `rotate(${i * (360 / petalCount)}deg)`;
+  flower.insertBefore(petal, flower.firstChild);
+}
+
+// Tiny sunflower seeds
+const center = document.getElementById('flowerCenter');
+
+for (let i = 0; i < 115; i++) {
+  const seed = document.createElement('span');
+  seed.className = 'seed';
+
+  const angle = i * 2.39996;
+  const radius = 3.5 * Math.sqrt(i);
+  const x = 54 + Math.cos(angle) * radius;
+  const y = 54 + Math.sin(angle) * radius;
+
+  seed.style.left = x + 'px';
+  seed.style.top = y + 'px';
+  center.appendChild(seed);
+}
+</script>
+</body>
+</html>
